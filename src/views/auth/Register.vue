@@ -1,8 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="3"></v-col>
-      <v-col cols="6">
+      <v-col cols="6" offset="3">
         <v-card class="mt-5 pa-6" elevation="3">
           <v-card-title class="d-flex justify-center">
             <h2 class="mb-4">Sign Up</h2>
@@ -56,7 +55,6 @@
           <v-card-actions></v-card-actions>
         </v-card>
       </v-col>
-      <v-col cols="3"></v-col>
     </v-row>
   </v-container>
 </template>
