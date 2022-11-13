@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
+import Country from '../views/Country.vue'
+import State from '../views/State.vue'
+import Airplane from '../views/Airplane.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +32,20 @@ const routes = [
     path:'/register',
     name:'Register',
     component:Register
+  },{
+    path:'/countries',
+    name:'Country',
+    component:Country
+  },
+  {
+    path:'/states',
+    name:'State',
+    component:State
+  },
+  {
+    path:'/airplanes',
+    name:'Airplane',
+    component:Airplane
   }
 ]
 
