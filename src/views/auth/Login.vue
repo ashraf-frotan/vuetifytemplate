@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="6" offset="3">
+      <v-col lg="6" md="8" sm="12" offset-lg="3" offset-md="2">
         <v-card class="mt-16 pa-10" elevation="3">
           <v-card-title class="d-flex justify-center">
             <h2 class="mb-4">Sign In</h2>
@@ -15,6 +15,8 @@
               placeholder="Enter your email here"
               type="email"
               append-icon="mdi-email"
+              v-model="email"
+              :rules="[() => !!email || 'Email is required']"
               rounded
               outlined
               dense
@@ -25,6 +27,8 @@
               placeholder="Enter your password here"
               type="password"
               append-icon="mdi-lock"
+              v-model="password"
+              :rules="[() => !!password || 'Password is required']"
               rounded
               dense
               outlined
@@ -50,5 +54,11 @@
 <script>
 export default {
   name: "Login",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
 };
 </script>
