@@ -57,7 +57,7 @@
             >
             </v-text-field>
             <v-checkbox color="success" label="Remember me"></v-checkbox>
-            <v-btn color="primary" block
+            <v-btn color="primary" block @click="$router.push({ name: 'Home' })"
               ><v-icon>mdi-login</v-icon> Sign Up</v-btn
             >
           </v-card-text>

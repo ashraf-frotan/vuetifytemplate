@@ -9,9 +9,7 @@
   >
     <v-list-item link>
       <v-list-item-content>
-        <v-list-item-title class="text-h6">
-          Application
-        </v-list-item-title>
+        <v-list-item-title class="text-h6"> Application </v-list-item-title>
         <v-list-item-subtitle> subtext </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -53,10 +51,10 @@ export default {
       mini: false,
     };
   },
-  methods:{
-    minimize(){
-      this.mini=!this.mini;
-    }
-  }
+  methods: {
+    minimize() {
+      this.mini = !this.mini;
+    },
+  },
 };
 </script>

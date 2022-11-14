@@ -1,32 +1,33 @@
 <template>
   <v-app>
-    <LeftSidebar ref="close" />
-    <Header @minLeftSidebar="test" />
-    <v-main>
-      <v-container>
-        <router-view />
-      </v-container>
-    </v-main>
+    <component :is="layout" />
   </v-app>
 </template>
 
 <script>
-import LeftSidebar from "./components/LeftSidebar.vue";
-import Header from "./components/Header.vue";
+import DashboardLayout from "@/components/layouts/DashboardLayout";
+import AuthLayout from "@/components/layouts/AuthLayout";
 export default {
   name: "App",
   components: {
-    LeftSidebar,
-    Header,
+    DashboardLayout,
+    AuthLayout,
   },
-  methods:{
-    test(){
-      this.$refs.close.minimize();
-    }
-  },
+  methods: {},
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      layout: "AuthLayout",
+    };
+  },
+  watch: {
+    $route(to) {
+      if (to.meta.layout !== undefined) {
+        this.layout = to.meta.layout;
+      } else {
+        this.layout = "DashboardLayout";
+      }
+    },
+  },
 };
 </script>
