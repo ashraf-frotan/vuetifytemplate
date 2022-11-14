@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <LeftSidebar />
-    <Header />
+    <LeftSidebar ref="close" />
+    <Header @minLeftSidebar="test" />
     <v-main>
       <v-container>
         <router-view />
@@ -18,6 +18,11 @@ export default {
   components: {
     LeftSidebar,
     Header,
+  },
+  methods:{
+    test(){
+      this.$refs.close.minimize();
+    }
   },
 
   data: () => ({

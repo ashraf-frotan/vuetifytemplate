@@ -1,6 +1,6 @@
 <template>
   <v-app-bar color="primary accent-4" dense dark app>
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click="$emit('minLeftSidebar')"></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
     <v-btn icon>
       <v-icon>mdi-heart</v-icon>
