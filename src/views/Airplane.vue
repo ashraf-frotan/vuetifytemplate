@@ -42,7 +42,13 @@
           </v-row>
         </v-card-title>
         <v-card-text>
-
+          <v-data-table dense :headers="headers" :items="airplanes" v-model="selected" item-key="id" show-select :single-select="singleSelect">
+            <template v-slot:top>
+              <v-switch v-model="singleSelect" label="Single Selelct" class="pa-3">
+                
+              </v-switch>
+            </template>
+          </v-data-table>
         </v-card-text>
       </v-card>  
     </v-col>
@@ -54,7 +60,14 @@ export default {
   name: "Airplane",
   data(){
     return {
-      headers:[],
+      singleSelect: false,
+      selected:[],
+      headers:[
+        {text:'ID',value:'id'},
+        {text:'Name',value:'name'},
+        {text:'Date Created',value:'created_at'},
+        {text:'Date Updated',value:'updated_at'}
+      ],
       airplanes:[
         {id:1, name:'AC12',created_at:'2012-01-23',updated_at:'2012-01-29'},
         {id:2, name:'BM12',created_at:'2014-01-23',updated_at:'2012-01-29'},
