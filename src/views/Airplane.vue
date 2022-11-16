@@ -78,6 +78,20 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <!-- Delete Dialog -->
+    <v-dialog v-model="delete_dialog" width="300">
+      <v-card>
+        <v-card-header class="d-flex justify-center">
+          <v-icon size="85" color="orange">mdi-alert-circle-outline</v-icon>
+        </v-card-header>
+        <v-card-text class="d-flex justify-center">
+          <h3>Are you sure to delete?</h3>
+        </v-card-text>
+        <v-card-actions>  
+          <v-btn></v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-row>
 </template>
 
@@ -89,6 +103,7 @@ export default {
       singleSelect: false,
       selected:[],
       dialog:false,
+      delete_dialog:true,
       headers:[
         {text:'ID',value:'id'},
         {text:'Name',value:'name'},
