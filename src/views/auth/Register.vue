@@ -7,8 +7,7 @@
             <h2 class="mb-4">Sign Up</h2>
           </v-card-title>
           <v-card-subtitle
-            ><router-link to="/login">Sign In</router-link>
-            here</v-card-subtitle
+            ><router-link to="/">Sign In</router-link> here</v-card-subtitle
           >
           <v-card-text>
             <v-text-field

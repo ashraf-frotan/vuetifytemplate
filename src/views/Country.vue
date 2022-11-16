@@ -1,12 +1,10 @@
 <template>
   <v-row>
     <v-col>
-      <v-card elevation="6" class="pa-5">
+      <v-card>
         <v-card-title>
           <v-row>
-            <v-col sm="12" md="6" lg="6" class="font-weight-bold">
-              Countries
-            </v-col>
+            <v-col sm="12" md="6" lg="6"> Countries </v-col>
             <v-col sm="12" md="6" lg="6" class="d-flex justify-end">
               <v-tooltip bottom color="primary">
                 <template v-slot:activator="{ on, attrs }">
@@ -77,7 +75,7 @@
             item-key="name"
             show-select
             :single-select="singleSelect"
-            class="elevation-1"
+            dense
           >
             <template v-slot:top>
               <v-switch
@@ -180,7 +178,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 .checkbox {
   margin: 0 !important;
   padding: 0 !important;

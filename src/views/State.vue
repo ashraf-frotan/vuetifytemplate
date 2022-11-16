@@ -4,8 +4,20 @@
       <v-card>
         <v-card-title>
           <v-row>
-            <v-col md="9"> States </v-col>
-            <v-col md="3">
+            <v-col md="9">
+              <div>States</div>
+              <v-alert
+                color="green"
+                text
+                dense
+                dismissible
+                border="left"
+                v-show="save_dialog"
+                class="mt-5"
+                >Saved successfully!</v-alert
+              >
+            </v-col>
+            <v-col md="3" class="d-flex justify-end">
               <v-tooltip bottom color="purple">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
@@ -15,6 +27,7 @@
                     color="primary"
                     fab
                     elevation="9"
+                    @click="dialog = true"
                   >
                     <v-icon>mdi-plus</v-icon>
                   </v-btn>
@@ -76,9 +89,10 @@
             :items="states"
             item-key="states.id"
             v-model="selected"
-            items-per-page="5"
+            :items-per-page="5"
             show-select
             :single-select="singleSelect"
+            dense
           >
             <template v-slot:top>
               <v-switch
@@ -93,7 +107,7 @@
     </v-col>
     <!-- Modal -->
     <v-dialog v-model="dialog" width="400">
-      <v-card>
+      <v-card class="pa-2">
         <v-card-title> Add New State </v-card-title>
         <v-card-text>
           <v-text-field
@@ -103,7 +117,13 @@
             dense
           >
           </v-text-field>
+          <v-select :items="countries" label="Country" dense outlined>
+          </v-select>
         </v-card-text>
+        <v-card-actions class="d-flex justify-end">
+          <v-btn small @click="dialog = false">Cancel</v-btn>
+          <v-btn color="primary" small @click="save">Save</v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-row>
@@ -130,8 +150,15 @@ export default {
       countries: ["Iran", "Afghanistan"],
       selected: [],
       singleSelect: false,
-      dialog: true,
+      dialog: false,
+      save_dialog: false,
     };
+  },
+  methods: {
+    save() {
+      this.dialog = false;
+      this.save_dialog = true;
+    },
   },
 };
 </script>

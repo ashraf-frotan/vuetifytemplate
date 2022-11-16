@@ -6,12 +6,13 @@ import Register from '../views/auth/Register.vue'
 import Country from '../views/Country.vue'
 import State from '../views/State.vue'
 import Airplane from '../views/Airplane.vue'
+import Timetable from '../views/Timetable.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: HomeView
   },
@@ -24,7 +25,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path:'/login',
+    path:'/',
     name:'Login',
     component:Login,
     meta:{
@@ -52,6 +53,11 @@ const routes = [
     path:'/airplanes',
     name:'Airplane',
     component:Airplane
+  },
+  {
+    path:'/timetable',
+    name:'Timetable',
+    component:Timetable
   }
 ]
 
