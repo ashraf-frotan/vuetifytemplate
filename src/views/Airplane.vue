@@ -8,7 +8,7 @@
              <v-col cols="4" class="d-flex justify-end">
               <v-tooltip bottom color="purple">
                 <template v-slot:activator="{on,attrs}">
-                  <v-btn x-small fab v-on="on" v-bind="attrs" color="primary">
+                  <v-btn x-small fab v-on="on" v-bind="attrs" color="primary" @click="dialog=true">
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
                 </template>
@@ -52,6 +52,27 @@
         </v-card-text>
       </v-card>  
     </v-col>
+    <v-dialog v-model="dialog" width="400">
+      <v-card>
+        <v-card-title>
+          Register new Airplane
+        </v-card-title>
+        <v-card-text>
+          <v-row class="pt-3">
+            <v-col cols="6">
+              <v-text-field label="Name" placeholder="Airplane name here" outlined dense></v-text-field>
+            </v-col>
+            <v-col cols="6">
+              <v-text-field label="Number" placeholder="Number of seats here" type="number" outlined dense></v-text-field>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions class="d-flex justify-end">
+          <v-btn small @click="dialog=false" elevation="3">Cancel</v-btn>
+          <v-btn color="primary" small @click="dialog=false" elevation="3">Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-row>
 </template>
 
@@ -62,6 +83,7 @@ export default {
     return {
       singleSelect: false,
       selected:[],
+      dialog:false,
       headers:[
         {text:'ID',value:'id'},
         {text:'Name',value:'name'},
@@ -75,6 +97,12 @@ export default {
         {id:4, name:'AT66',created_at:'2015-01-23',updated_at:'2012-01-29'},
         {id:5, name:'ZZ99',created_at:'2017-01-23',updated_at:'2012-01-29'},
         {id:6, name:'AK12',created_at:'2016-01-23',updated_at:'2012-01-29'},
+        {id:7, name:'JT12',created_at:'2012-01-23',updated_at:'2012-01-29'},
+        {id:8, name:'AS12',created_at:'2014-01-23',updated_at:'2012-01-29'},
+        {id:9, name:'KD12 M',created_at:'2014-01-23',updated_at:'2012-01-29'},
+        {id:10, name:'BMW',created_at:'2015-01-23',updated_at:'2012-01-29'},
+        {id:11, name:'SS73',created_at:'2017-01-23',updated_at:'2012-01-29'},
+        {id:12, name:'VUE',created_at:'2016-01-23',updated_at:'2012-01-29'},
       ]
     }
   }
