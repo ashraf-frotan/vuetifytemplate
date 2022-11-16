@@ -4,7 +4,11 @@
       <v-card>
         <v-card-title>
           <v-row>
-            <v-col cols="8">Airplanes</v-col>
+            <v-col cols="8">
+              <div>Airplanes</div>
+              
+              <div class="mt-5"><v-alert type="success" border="left" dense text>Deleted successfully!</v-alert></div>
+            </v-col>
              <v-col cols="4" class="d-flex justify-end">
               <v-tooltip bottom color="purple">
                 <template v-slot:activator="{on,attrs}">
@@ -52,6 +56,7 @@
         </v-card-text>
       </v-card>  
     </v-col>
+    <!-- Add Dialogn -->
     <v-dialog v-model="dialog" width="400">
       <v-card>
         <v-card-title>
