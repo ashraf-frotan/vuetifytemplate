@@ -7,7 +7,7 @@
             <v-col cols="8">
               <div>Airplanes</div>
               
-              <div class="mt-5"><v-alert type="success" border="left" dense text>Deleted successfully!</v-alert></div>
+              <div class="mt-5"><v-alert type="success" border="left" dense text v-show="delete_alert">Deleted successfully!</v-alert></div>
             </v-col>
              <v-col cols="4" class="d-flex justify-end">
               <v-tooltip bottom color="purple">
@@ -36,7 +36,7 @@
               </v-tooltip>
               <v-tooltip bottom color="pink">
                 <template v-slot:activator="{on,attrs}">
-                  <v-btn x-small fab v-on="on" v-bind="attrs" color="error" class="ml-1 white--text">
+                  <v-btn x-small fab v-on="on" v-bind="attrs" color="error" class="ml-1 white--text" @click="delete_dialog=true">
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
                 </template>
@@ -80,15 +80,16 @@
     </v-dialog>
     <!-- Delete Dialog -->
     <v-dialog v-model="delete_dialog" width="300">
-      <v-card>
+      <v-card class="pa-3">
         <v-card-header class="d-flex justify-center">
           <v-icon size="85" color="orange">mdi-alert-circle-outline</v-icon>
         </v-card-header>
         <v-card-text class="d-flex justify-center">
           <h3>Are you sure to delete?</h3>
         </v-card-text>
-        <v-card-actions>  
-          <v-btn></v-btn>
+        <v-card-actions class="d-flex justify-center">  
+          <v-btn small @click="delete_dialog=false">Cancel</v-btn>
+          <v-btn color="error" small @click="deleteAirplane">Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -103,7 +104,8 @@ export default {
       singleSelect: false,
       selected:[],
       dialog:false,
-      delete_dialog:true,
+      delete_dialog:false,
+      delete_alert:false,
       headers:[
         {text:'ID',value:'id'},
         {text:'Name',value:'name'},
@@ -124,6 +126,12 @@ export default {
         {id:11, name:'SS73',created_at:'2017-01-23',updated_at:'2012-01-29'},
         {id:12, name:'VUE',created_at:'2016-01-23',updated_at:'2012-01-29'},
       ]
+    }
+  },
+  methods: {
+    deleteAirplane() {
+      this.delete_dialog=false;
+      this.delete_alert=true;
     }
   }
 };
