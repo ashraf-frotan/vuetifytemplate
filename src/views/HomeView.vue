@@ -6,6 +6,14 @@
       repudiandae officia tempore nesciunt obcaecati reprehenderit ex accusamus
       quibusdam vel.
     </v-col>
+    <v-dialog v-model="dialog" width="300">
+      <v-card color="primary" dark>
+        <v-card-text>
+          Please wait
+          <v-progress-linear color="white" indeterminate> </v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-row>
 </template>
 
@@ -14,7 +22,24 @@ export default {
   name: "Home",
   components: {},
   data() {
-    return {};
+    return {
+      dialog: false,
+    };
+  },
+  watch: {
+    dialog(val) {
+      if (!val) return;
+
+      setTimeout(() => (this.dialog = false), 1000);
+    },
+  },
+  methods: {
+    openProgress() {
+      this.dialog = true;
+    },
+  },
+  created() {
+    this.openProgress();
   },
 };
 </script>

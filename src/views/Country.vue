@@ -9,11 +9,11 @@
               <v-tooltip bottom color="primary">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
+                    v-on="on"
+                    v-bind="attrs"
                     small
                     color="primary"
                     elevation="5"
-                    v-bind="attrs"
-                    v-on="on"
                     @click="dialog = true"
                     ><v-icon small>mdi-plus</v-icon></v-btn
                   >
@@ -23,12 +23,12 @@
               <v-tooltip bottom color="green">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
+                    v-on="on"
+                    v-bind="attrs"
                     small
                     color="success"
                     class="ml-1"
                     elevation="5"
-                    v-bind="attrs"
-                    v-on="on"
                     ><v-icon small>mdi-pencil</v-icon></v-btn
                   >
                 </template>
@@ -38,12 +38,12 @@
               <v-tooltip bottom color="orange">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
+                    v-on="on"
+                    v-attrs="attrs"
                     small
                     color="orange"
                     class="ml-1 white--text"
                     elevation="5"
-                    v-on="on"
-                    v-attrs="attrs"
                     ><v-icon small>mdi-filter</v-icon></v-btn
                   >
                 </template>
@@ -52,12 +52,12 @@
               <v-tooltip bottom color="error">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
+                    v-on="on"
+                    v-bind="attrs"
                     small
                     color="error"
                     class="ml-1"
                     @click="delete_dialog = true"
-                    v-on="on"
-                    v-bind="attrs"
                     ><v-icon small>mdi-delete</v-icon></v-btn
                   >
                 </template>

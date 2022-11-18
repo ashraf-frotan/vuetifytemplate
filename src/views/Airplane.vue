@@ -31,10 +31,10 @@
               <v-tooltip bottom color="purple">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    x-small
-                    fab
                     v-on="on"
                     v-bind="attrs"
+                    x-small
+                    fab
                     color="primary"
                     @click="dialog = true"
                   >
@@ -46,10 +46,10 @@
               <v-tooltip bottom color="pink">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    x-small
-                    fab
                     v-on="on"
                     v-bind="attrs"
+                    x-small
+                    fab
                     color="green"
                     class="ml-1 white--text"
                   >
@@ -61,10 +61,10 @@
               <v-tooltip bottom color="orange">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    x-small
-                    fab
                     v-on="on"
                     v-bind="attrs"
+                    x-small
+                    fab
                     color="orange"
                     class="ml-1 white--text"
                   >
@@ -76,10 +76,10 @@
               <v-tooltip bottom color="pink">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    x-small
-                    fab
                     v-on="on"
                     v-bind="attrs"
+                    x-small
+                    fab
                     color="error"
                     class="ml-1 white--text"
                     @click="delete_dialog = true"

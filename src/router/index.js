@@ -7,6 +7,12 @@ import Country from '../views/Country.vue'
 import State from '../views/State.vue'
 import Airplane from '../views/Airplane.vue'
 import Timetable from '../views/Timetable.vue'
+import Flight from '../views/Flight.vue'
+import Passanger from '../views/Passanger.vue'
+import Book from '../views/Book.vue'
+import User from '../views/User.vue'
+import Profile from '../views/Profile.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -58,6 +64,34 @@ const routes = [
     path:'/timetable',
     name:'Timetable',
     component:Timetable
+  },
+  {
+    path:'/flights',
+    name:'Flight',
+    component:Flight
+  },
+  {
+    path:'/passangers',
+    name:'Passanger',
+    component:Passanger
+  },
+  {
+    path:'/books',
+    name:'Book',
+    component:Book
+  },{
+    path:'/users',
+    name:'User',
+    component:User
+  },
+  {
+    path:'/profile',
+    name:'Profile',
+    component:Profile,
+  },{
+    path:'/:catchAll(.*)',
+    name:'NotFound',
+    component:NotFound
   }
 ]
 

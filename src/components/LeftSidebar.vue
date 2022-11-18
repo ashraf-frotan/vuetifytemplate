@@ -9,8 +9,10 @@
   >
     <v-list-item link>
       <v-list-item-content>
-        <v-list-item-title class="text-h6"> Application </v-list-item-title>
-        <v-list-item-subtitle> subtext </v-list-item-subtitle>
+        <v-list-item-title class="text-h6">
+          {{ project_title }}
+        </v-list-item-title>
+        <v-list-item-subtitle> {{ project_subtitle }} </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 
@@ -37,7 +39,6 @@
         <v-card-title class="text-h9 d-flex justify-center">
           <v-icon size="85" color="orange">mdi-alert-circle-outline</v-icon>
         </v-card-title>
-
         <v-card-text class="d-flex text-center">
           <v-row>
             <v-col cols="12" class="pa-3 text-h9">
@@ -45,7 +46,6 @@
             </v-col>
           </v-row>
         </v-card-text>
-
         <v-card-actions class="d-flex justify-center">
           <v-btn color="primary" @click="delete_dialog = false" small>
             Cancel
@@ -70,18 +70,31 @@ export default {
         { title: "Countries", icon: "mdi-flag", url: "/countries" },
         { title: "States", icon: "mdi-map", url: "/states" },
         { title: "Timetable", icon: "mdi-timetable", url: "/timetable" },
+        { title: "Flights", icon: "mdi-airplane", url: "/flights" },
+        { title: "Passanger", icon: "mdi-account", url: "/passangers" },
+        { title: "Books", icon: "mdi-book", url: "/books" },
+        { title: "User Management", icon: "mdi-account", url: "/users" },
+        { title: "Profile", icon: "mdi-account", url: "/profile" },
         { title: "Logout", icon: "mdi-logout", url: "/" },
       ],
       right: null,
       mini: false,
+      project_title: "Flight",
+      project_subtitle: "Management",
     };
   },
   methods: {
     minimize() {
       this.mini = !this.mini;
+      if (this.mini == true) {
+        this.project_title = "F..";
+        this.project_subtitle = "M..";
+      } else {
+        this.project_title = "Flight";
+        this.project_subtitle = "Management";
+      }
     },
     moveToUrl(url) {
-      console.log(url);
       if (url != "/") {
         this.$router.push(url);
       } else {

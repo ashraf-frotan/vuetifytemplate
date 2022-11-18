@@ -45,7 +45,7 @@
         </v-btn>
       </template>
       <v-list>
-        <v-list-item link>
+        <v-list-item link @click="$router.push('/profile')">
           <v-list-item-title>Profile</v-list-item-title>
         </v-list-item>
         <v-list-item link @click="$router.push({ name: 'Login' })">

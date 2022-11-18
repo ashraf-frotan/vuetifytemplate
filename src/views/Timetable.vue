@@ -37,7 +37,7 @@
                     rounded
                     color="green"
                     small
-                    class="ml-1"
+                    class="ml-1 white--text"
                     v-on="on"
                     v-bind="attrs"
                     ><v-icon>mdi-pencil</v-icon></v-btn
@@ -51,7 +51,7 @@
                     rounded
                     color="orange"
                     small
-                    class="ml-1"
+                    class="ml-1 white--text"
                     v-on="on"
                     v-bind="attrs"
                     ><v-icon>mdi-filter</v-icon></v-btn
